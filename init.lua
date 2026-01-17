@@ -619,6 +619,13 @@ require('lazy').setup({
             },
           },
         },
+        tinymist = {
+          settings = {
+            formatterMode = 'typstyle',
+            exportPdf = 'onSave',
+            semanticTokens = 'disable',
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
@@ -883,6 +890,19 @@ require('lazy').setup({
     --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+  },
+  {
+    'quarto-dev/quarto-nvim',
+    dependencies = {
+      'jmbuhr/otter.nvim',
+      'nvim-treesitter/nvim-treesitter',
+    },
+  },
+  {
+    'chomosuke/typst-preview.nvim',
+    lazy = false,
+    version = '1.*',
+    opts = {},
   },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
